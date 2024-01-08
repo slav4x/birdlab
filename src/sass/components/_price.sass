@@ -1,0 +1,70 @@
+.price
+  &-grid
+    @include flexbox
+    align-items: flex-start
+    gap: 48px 14px
+  &-item
+    width: 100%
+    &-sm
+      width: calc(35% - 7px)
+    &-md
+      width: calc(65% - 7px)
+    &__image
+      height: 50vh
+      min-height: 320px
+      max-height: 480px
+      width: 100%
+      overflow: hidden
+      border-radius: 30px
+      background: #eee
+      position: relative
+      margin-bottom: 20px
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: center
+        transition: .25s
+    &__value
+      position: absolute
+      z-index: 10
+      top: 20px
+      right: 20px
+      font-size: 14px
+      line-height: 10px
+      padding: 10px
+      background: #fff
+      border-radius: 99px
+      display: block
+    &__new
+      position: absolute
+      z-index: 10
+      top: 20px
+      left: 20px
+      font-size: 14px
+      line-height: 10px
+      padding: 10px
+      @include flexbox
+      align-items: center
+      gap: 4px
+      font-weight: 600
+      text-transform: uppercase
+      color: #fff
+      &::after
+        content: ''
+        display: block
+        width: 6px
+        height: 6px
+        border-radius: 100%
+        background: #f2223b
+    &__text
+      h3
+        font-size: 24px
+        font-weight: 700
+        line-height: 1
+      p
+        margin-top: 10px
+        font-size: 14px
+    &:hover
+      .price-item__image img
+        transform: scale(1.1)
