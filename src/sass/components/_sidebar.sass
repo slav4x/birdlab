@@ -1,0 +1,57 @@
+.sidebar
+  width: 200px
+  position: sticky
+  top: 0
+  padding: 40px 0
+  height: 100vh
+  @include flexbox
+  flex-direction: column
+  align-items: flex-start
+  &-nav
+    font-size: 14px
+    line-height: 1
+    margin-top: 60px
+    li
+      margin-top: 24px
+      a
+        transition: .25s
+        border-bottom: 1px solid transparent
+        &:hover
+          color: var(--color-orange)
+          border-color: var(--color-orange)
+      &:first-child
+        margin-top: 0
+  &-copy
+    margin-top: 48px
+    font-size: 12px
+    line-height: 1.2
+    a
+      opacity: 0.5
+  &-links
+    margin-top: auto
+    li
+      margin-top: 10px
+      @include flexbox
+      align-items: center
+      &:first-child
+        margin-top: 0
+      a
+        @include flexbox
+        align-items: center
+        font-size: 14px
+        line-height: 10px
+        padding: 20px
+        border-radius: 999px
+        background: #eaeaea
+      &.orange a
+        background: var(--color-orange)
+        color: #fff
+        font-weight: 500
+      &.arrow a
+        gap: 5px
+        &::before
+          content: ''
+          display: block
+          width: 9px
+          height: 11px
+          background: url("data:image/svg+xml,%3Csvg width='9' height='11' viewBox='0 0 9 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.53638 8.89708L4.53638 0.999991' stroke='black' stroke-width='1.05284' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M7.37522 6.0459L4.5366 8.89677L1.69751 6.0459' stroke='black' stroke-width='1.05284' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='1' y='9.4873' width='7.07167' height='0.824432' rx='0.412216' fill='black'/%3E%3C/svg%3E%0A") no-repeat center
