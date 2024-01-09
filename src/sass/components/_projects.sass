@@ -43,6 +43,20 @@
       line-height: 1.3
       position: relative
       display: block
+      &-label
+        span
+          position: absolute
+          top: 7px
+          right: 14px
+          width: 66px
+          height: 28px
+          border-radius: 99px
+          font-size: 14px
+          @include flexbox
+          align-items: center
+          justify-content: center
+          color: rgba(0,0,0,.4)
+          background: #ececec
     a.projects-item__title
       padding-right: 80px
       &::after
@@ -64,3 +78,42 @@
     &:hover
       .projects-item__image img
         transform: scale(1.1)
+    &__quote
+      @include flexbox
+      align-items: flex-start
+      margin-top: 24px
+      padding-top: 24px
+      border-top: 1px solid #E2E2E2
+      &-author
+        @include flexbox
+        align-items: center
+        width: calc(100% - 410px)
+        img
+          width: 60px
+          height: 60px
+          border-radius: 100%
+          object-fit: cover
+          object-position: center
+        span
+          width: calc(100% - 60px - 20px)
+          margin-left: auto
+        h4
+          font-size: 21px
+          font-weight: 400
+          margin-bottom: 3px
+        p
+          opacity: 0.4
+      &-text
+        max-width: 350px
+        margin-left: auto
+        font-size: 18px
+        line-height: 1.3
+        margin-right: 20px
+        position: relative
+        &::before
+          content: '”'
+          position: absolute
+          top: -20px
+          left: -40px
+          font-size: 56px
+          color: var(--color-orange)
