@@ -18,7 +18,7 @@
       background: #eee
       position: relative
       margin-bottom: 20px
-      img
+      img, video
         width: 100%
         height: 100%
         object-fit: cover
@@ -76,8 +76,9 @@
         bottom: -100px
         z-index: 10
     &:hover
-      .projects-item__image img
-        transform: scale(1.1)
+      .projects-item__image
+        img, video
+          transform: scale(1.1)
     &__quote
       @include flexbox
       align-items: flex-start
