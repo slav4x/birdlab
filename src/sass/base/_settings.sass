@@ -43,3 +43,28 @@ input, textarea
   font-weight: 700
   line-height: 1.1
   margin-bottom: 40px
+
+.btn-contact
+  order: 3
+  position: sticky
+  top: 40px
+  background: #f6f6f6
+  border-radius: 999px
+  @include flexbox
+  align-items: center
+  gap: 5px
+  font-size: 14px
+  font-weight: 500
+  line-height: 1
+  padding: 12px
+  p
+    background: linear-gradient(266deg, #2C4CEC 9.1%, #2C90EC 83.94%)
+    background-clip: text
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+  &::before
+    content: ''
+    display: block
+    width: 8px
+    height: 8px
+    background: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.77415 0.232793C7.57407 0.0274392 7.27795 -0.0490651 7.00184 0.0314658L0.563199 1.90381C0.271879 1.98474 0.0653948 2.21708 0.00977206 2.51222C-0.0470512 2.8126 0.15143 3.19391 0.410736 3.35337L2.42396 4.59072C2.63045 4.71756 2.89695 4.68575 3.06782 4.51341L5.37317 2.19372C5.48922 2.07292 5.68129 2.07292 5.79734 2.19372C5.91339 2.31049 5.91339 2.49974 5.79734 2.62053L3.488 4.94063C3.31673 5.11256 3.28471 5.38033 3.41076 5.5881L4.64087 7.6215C4.78493 7.8631 5.03303 8 5.30514 8C5.33715 8 5.37317 8 5.40518 7.99597C5.71731 7.95571 5.96541 7.7423 6.05745 7.44031L7.96623 1.00992C8.05026 0.736111 7.97423 0.438147 7.77415 0.232793Z' fill='%232C90EC'/%3E%3C/svg%3E%0A") no-repeat center
