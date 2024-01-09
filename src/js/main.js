@@ -9,5 +9,12 @@ const viewportFix = (width) => {
 viewportFix(375);
 
 document.addEventListener('DOMContentLoaded', function () {
-  //
+  const UPDATE = ({ target, x, y }) => {
+    const bounds = target.getBoundingClientRect();
+    target.style.setProperty('--x', x - bounds.left);
+    target.style.setProperty('--y', y - bounds.top);
+  };
+
+  const BTNS = document.querySelectorAll('.hover');
+  BTNS.forEach((BTN) => BTN.addEventListener('pointermove', UPDATE));
 });

@@ -44,6 +44,44 @@
         border-radius: 999px
         background: #eaeaea
         gap: 5px
+        transition: .25s
+        &:hover
+          background: #e2e2e2
+        &.hover
+          touch-action: none
+          position: relative
+          overflow: hidden
+          p
+            position: relative
+            z-index: 5
+            pointer-events: none
+          .back
+            position: absolute
+            inset: 0
+            pointer-events: none
+            overflow: hidden
+            border-radius: 100px
+            span
+              left: calc(var(--x, 0) * 1px)
+              top: calc(var(--y, 0) * 1px)
+              width: 30%
+              display: inline-block
+              aspect-ratio: 1
+              background: red
+              transform: translate(-30%, -30%) scale(var(--active, 0))
+              transition: transform 0.25s
+              background: #F2714C
+              position: absolute
+              pointer-events: none
+              overflow: hidden
+              border-radius: 50%
+          &:is(:hover, :focus-visible)
+            --active: 1.5
+          &:active
+            --active: 5
+          &:active .back > span
+            transition: transform 0.15s
+
       &.orange a
         background: var(--color-orange)
         color: #fff
@@ -69,3 +107,8 @@
           width: 11px
           height: 11px
           background: url("data:image/svg+xml,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1015_155)'%3E%3Cpath d='M5.5 0.991375C6.9685 0.991375 7.14267 0.996875 7.72292 1.02346C9.21342 1.09129 9.90962 1.7985 9.97746 3.278C10.004 3.85779 10.0091 4.03196 10.0091 5.50046C10.0091 6.96942 10.0036 7.14313 9.97746 7.72292C9.90917 9.20104 9.21479 9.90962 7.72292 9.97746C7.14267 10.004 6.96942 10.0095 5.5 10.0095C4.0315 10.0095 3.85733 10.004 3.27754 9.97746C1.78338 9.90917 1.09083 9.19875 1.023 7.72246C0.996417 7.14267 0.990917 6.96896 0.990917 5.5C0.990917 4.0315 0.996875 3.85779 1.023 3.27754C1.09129 1.7985 1.78567 1.09083 3.27754 1.023C3.85779 0.996875 4.0315 0.991375 5.5 0.991375ZM5.5 0C4.00629 0 3.81929 0.00641667 3.23263 0.033C1.23521 0.124667 0.125125 1.23292 0.0334583 3.23217C0.00641667 3.81929 0 4.00629 0 5.5C0 6.99371 0.00641667 7.18117 0.033 7.76783C0.124667 9.76525 1.23292 10.8753 3.23217 10.967C3.81929 10.9936 4.00629 11 5.5 11C6.99371 11 7.18117 10.9936 7.76783 10.967C9.76342 10.8753 10.8763 9.76708 10.9665 7.76783C10.9936 7.18117 11 6.99371 11 5.5C11 4.00629 10.9936 3.81929 10.967 3.23263C10.8772 1.23704 9.76754 0.125125 7.76829 0.0334583C7.18117 0.00641667 6.99371 0 5.5 0ZM5.5 2.67575C3.94029 2.67575 2.67575 3.94029 2.67575 5.5C2.67575 7.05971 3.94029 8.32471 5.5 8.32471C7.05971 8.32471 8.32425 7.06017 8.32425 5.5C8.32425 3.94029 7.05971 2.67575 5.5 2.67575ZM5.5 7.33333C4.48754 7.33333 3.66667 6.51292 3.66667 5.5C3.66667 4.48754 4.48754 3.66667 5.5 3.66667C6.51246 3.66667 7.33333 4.48754 7.33333 5.5C7.33333 6.51292 6.51246 7.33333 5.5 7.33333ZM8.43608 1.90438C8.07125 1.90438 7.77563 2.2 7.77563 2.56437C7.77563 2.92875 8.07125 3.22437 8.43608 3.22437C8.80046 3.22437 9.09562 2.92875 9.09562 2.56437C9.09562 2.2 8.80046 1.90438 8.43608 1.90438Z' fill='%23202020'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1015_155'%3E%3Crect width='11' height='11' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A") no-repeat center
+
+@supports (transition-timing-function: linear(0, 1))
+  .hover:is(:hover, :focus-visible) .back > span
+    transition-duration: 0.5s
+    transition-timing-function: linear(0, 0.5007 7.21%, 0.7803 12.29%, 0.8883 14.93%, 0.9724 17.63%, 1.0343 20.44%, 1.0754 23.44%, 1.0898 25.22%, 1.0984 27.11%, 1.1014 29.15%, 1.0989 31.4%, 1.0854 35.23%, 1.0196 48.86%, 1.0043 54.06%, 0.9956 59.6%, 0.9925 68.11%, 1)
