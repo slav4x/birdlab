@@ -20,11 +20,21 @@
       background: #eee
       position: relative
       margin-bottom: 20px
-      img
+      img, video
         width: 100%
         height: 100%
         object-fit: cover
         object-position: center
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        opacity: 0
+        background: #000
+        z-index: 5
         transition: .25s
     &__title
       font-size: 24px
@@ -50,9 +60,28 @@
         right: 0
         bottom: -100px
         z-index: 5
+      &-label
+        &::after
+          display: none
+        span
+          position: absolute
+          top: 3px
+          right: 14px
+          width: 66px
+          height: 28px
+          border-radius: 99px
+          font-size: 14px
+          @include flexbox
+          align-items: center
+          justify-content: center
+          color: rgba(0,0,0,.4)
+          background: #ececec
     &__desc
       opacity: 0.4
       font-weight: 500
     &:hover
-      .media-item__image img
-        transform: scale(1.1)
+      .media-item__image::before
+        opacity: .1
+    &:active
+      .media-item__image::before
+        opacity: .3
