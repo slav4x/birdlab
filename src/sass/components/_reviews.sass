@@ -1,0 +1,86 @@
+.reviews
+  position: fixed
+  bottom: 20px
+  right: 20px
+  z-index: 100
+  width: 180px
+  height: 255px
+  padding: 25px 20px
+  padding-right: 10px
+  border-radius: 20px
+  border: 1px solid rgba(0, 0, 0, 0.05)
+  background: #FFF
+  box-shadow: 0px 14px 34.3px -6px rgba(0, 0, 0, 0.10)
+  &-close
+    position: absolute
+    width: 9px
+    height: 9px
+    top: 16px
+    right: 16px
+    background: url("data:image/svg+xml,%3Csvg width='9' height='9' viewBox='0 0 9 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect y='8.11719' width='11.4801' height='1.24785' rx='0.623927' transform='rotate(-45 0 8.11719)' fill='%23252525'/%3E%3Crect x='0.882812' width='11.4801' height='1.24785' rx='0.623927' transform='rotate(45 0.882812 0)' fill='%23252525'/%3E%3C/svg%3E%0A") no-repeat center / cover
+    cursor: pointer
+  &-title
+    font-size: 16px
+    font-weight: 600
+  &-item
+    &__video
+      position: relative
+      width: 125px
+      height: 125px
+      margin-bottom: 10px
+      transform: scale(0.5)
+      transform-origin: left
+      transition: .25s
+      opacity: 0.4
+      &::before
+        content: ''
+        display: block
+        width: 14px
+        height: 14px
+        position: absolute
+        top: 4px
+        left: 0
+        right: 0
+        margin: 0 auto
+        z-index: 20
+        border-radius: 100%
+        background-color: rgba(0,0,0,.4)
+        background-repeat: no-repeat
+        background-position: center
+        background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.00009 5.58375C5.94676 5.58375 5.89676 5.56708 5.85009 5.53375C5.74009 5.45042 5.71676 5.29375 5.80009 5.18375C6.32342 4.48708 6.32342 3.51375 5.80009 2.81708C5.71676 2.70708 5.74009 2.55042 5.85009 2.46708C5.96009 2.38375 6.11676 2.40708 6.20009 2.51708C6.85342 3.39042 6.85342 4.61042 6.20009 5.48375C6.15009 5.55042 6.07676 5.58375 6.00009 5.58375Z' fill='white'/%3E%3Cpath d='M6.60995 6.41643C6.55662 6.41643 6.50662 6.39977 6.45995 6.36643C6.34995 6.2831 6.32662 6.12643 6.40995 6.01643C7.29995 4.82976 7.29995 3.16977 6.40995 1.9831C6.32662 1.8731 6.34995 1.71643 6.45995 1.6331C6.56995 1.54977 6.72662 1.5731 6.80995 1.6831C7.83329 3.04643 7.83329 4.9531 6.80995 6.31643C6.76329 6.3831 6.68662 6.41643 6.60995 6.41643Z' fill='white'/%3E%3Cpath d='M4.67341 1.25958C4.30008 1.05292 3.82341 1.10625 3.33675 1.40958L2.36341 2.01958C2.29675 2.05958 2.22008 2.08292 2.14341 2.08292H1.83341H1.66675C0.860081 2.08292 0.416748 2.52625 0.416748 3.33292V4.66625C0.416748 5.47292 0.860081 5.91625 1.66675 5.91625H1.83341H2.14341C2.22008 5.91625 2.29675 5.93958 2.36341 5.97958L3.33675 6.58958C3.63008 6.77292 3.91675 6.86292 4.18341 6.86292C4.35675 6.86292 4.52341 6.82292 4.67341 6.73958C5.04342 6.53292 5.25008 6.10292 5.25008 5.52958V2.46958C5.25008 1.89625 5.04342 1.46625 4.67341 1.25958Z' fill='white'/%3E%3C/svg%3E%0A")
+      video
+        width: 100%
+        height: 100%
+        border-radius: 100%
+        object-fit: cover
+        object-position: center
+    &.muted .reviews-item__video::before
+      background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.00009 5.58344C5.94676 5.58344 5.89676 5.56677 5.85009 5.53344C5.74009 5.45011 5.71676 5.29344 5.80009 5.18344C6.22009 4.62344 6.31009 3.88011 6.04009 3.23677C5.98676 3.11011 6.04676 2.96344 6.17342 2.91011C6.30009 2.85677 6.44676 2.91677 6.50009 3.04344C6.84009 3.85011 6.72342 4.78677 6.20009 5.48677C6.15009 5.55011 6.07676 5.58344 6.00009 5.58344Z' fill='white'/%3E%3Cpath d='M6.60995 6.41673C6.55662 6.41673 6.50662 6.40007 6.45995 6.36673C6.34995 6.2834 6.32662 6.12673 6.40995 6.01673C7.12329 5.06673 7.27995 3.7934 6.81995 2.69673C6.76662 2.57007 6.82662 2.4234 6.95329 2.37007C7.07995 2.31673 7.22662 2.37673 7.27995 2.5034C7.80995 3.7634 7.62995 5.2234 6.80995 6.31673C6.76329 6.3834 6.68662 6.41673 6.60995 6.41673Z' fill='white'/%3E%3Cpath d='M4.67999 4.31968C4.88999 4.10968 5.24999 4.25968 5.24999 4.55635V5.53302C5.24999 6.10635 5.04333 6.53635 4.67333 6.74302C4.52333 6.82635 4.35666 6.86635 4.18333 6.86635C3.91666 6.86635 3.62999 6.77635 3.33666 6.59302L3.12333 6.45968C2.94333 6.34635 2.91333 6.09302 3.06333 5.94302L4.67999 4.31968Z' fill='white'/%3E%3Cpath d='M7.25675 0.742969C7.15675 0.642969 6.99341 0.642969 6.89341 0.742969L5.24341 2.39297C5.22341 1.85964 5.02341 1.45964 4.67008 1.26297C4.29675 1.0563 3.82008 1.10964 3.33341 1.41297L2.36341 2.01964C2.29675 2.05964 2.22008 2.08297 2.14341 2.08297H1.83341H1.66675C0.860081 2.08297 0.416748 2.5263 0.416748 3.33297V4.6663C0.416748 5.47297 0.860081 5.9163 1.66675 5.9163H1.72008L0.740081 6.8963C0.640081 6.9963 0.640081 7.15964 0.740081 7.25964C0.793415 7.3063 0.856748 7.33297 0.923415 7.33297C0.990081 7.33297 1.05341 7.3063 1.10341 7.2563L7.25675 1.10297C7.36008 1.00297 7.36008 0.842969 7.25675 0.742969Z' fill='white'/%3E%3C/svg%3E%0A")
+    h4
+      font-weight: 500
+      font-size: 15px
+      margin-bottom: 2px
+      opacity: 0
+      transition: .25s
+    p
+      font-size: 12px
+      font-weight: 500
+      opacity: 0
+      transition: .25s
+  &-slider
+    overflow: hidden
+    margin-top: 10px
+    .splide__slide.is-active
+      .reviews-item
+        &__video
+          transform: scale(1)
+          z-index: 2
+          opacity: 1
+        h4
+          opacity: 1
+        p
+          opacity: 0.3
+
+.splide__arrow,
+.splide__pagination
+  display: none !important
