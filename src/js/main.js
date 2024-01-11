@@ -66,3 +66,18 @@ const reviews = document.querySelector('.reviews');
 closeReviews.addEventListener('click', () => {
   reviews.remove();
 });
+
+const quizSteps = document.querySelectorAll('.quiz-step');
+const quizWrapper = document.querySelector('.quiz-wrapper');
+
+quizWrapper.addEventListener('click', function (event) {
+  if (event.target.classList.contains('quiz-step__next')) {
+    let currentStep = document.querySelector('.quiz-step.active');
+    let nextStep = currentStep.nextElementSibling;
+
+    if (nextStep && nextStep.classList.contains('quiz-step')) {
+      currentStep.classList.remove('active');
+      nextStep.classList.add('active');
+    }
+  }
+});
