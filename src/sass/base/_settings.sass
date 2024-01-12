@@ -70,3 +70,83 @@ input, textarea
     width: 8px
     height: 8px
     background: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.77415 0.232793C7.57407 0.0274392 7.27795 -0.0490651 7.00184 0.0314658L0.563199 1.90381C0.271879 1.98474 0.0653948 2.21708 0.00977206 2.51222C-0.0470512 2.8126 0.15143 3.19391 0.410736 3.35337L2.42396 4.59072C2.63045 4.71756 2.89695 4.68575 3.06782 4.51341L5.37317 2.19372C5.48922 2.07292 5.68129 2.07292 5.79734 2.19372C5.91339 2.31049 5.91339 2.49974 5.79734 2.62053L3.488 4.94063C3.31673 5.11256 3.28471 5.38033 3.41076 5.5881L4.64087 7.6215C4.78493 7.8631 5.03303 8 5.30514 8C5.33715 8 5.37317 8 5.40518 7.99597C5.71731 7.95571 5.96541 7.7423 6.05745 7.44031L7.96623 1.00992C8.05026 0.736111 7.97423 0.438147 7.77415 0.232793Z' fill='%232C90EC'/%3E%3C/svg%3E%0A") no-repeat center
+
+.hover
+  touch-action: none
+  position: relative
+  overflow: hidden
+  p
+    position: relative
+    z-index: 5
+    pointer-events: none
+  .back
+    position: absolute
+    inset: 0
+    pointer-events: none
+    overflow: hidden
+    border-radius: 100px
+    span
+      left: calc(var(--x, 0) * 1px)
+      top: calc(var(--y, 0) * 1px)
+      width: 30%
+      display: inline-block
+      aspect-ratio: 1
+      background: red
+      transform: translate(-30%, -30%) scale(var(--active, 0))
+      transition: transform 0.25s
+      background: #F2714C
+      position: absolute
+      pointer-events: none
+      overflow: hidden
+      border-radius: 50%
+  &:is(:hover, :focus-visible)
+    --active: 1.5
+  &:active
+    --active: 5
+  &:active .back > span
+    transition: transform 0.15s
+
+@supports (transition-timing-function: linear(0, 1))
+  .hover:is(:hover, :focus-visible) .back > span
+    transition-duration: 0.5s
+    transition-timing-function: linear(0, 0.5007 7.21%, 0.7803 12.29%, 0.8883 14.93%, 0.9724 17.63%, 1.0343 20.44%, 1.0754 23.44%, 1.0898 25.22%, 1.0984 27.11%, 1.1014 29.15%, 1.0989 31.4%, 1.0854 35.23%, 1.0196 48.86%, 1.0043 54.06%, 0.9956 59.6%, 0.9925 68.11%, 1)
+
+.manager
+  @include flexbox
+  align-items: center
+  padding-top: 120px
+  img
+    width: 370px
+    height: 370px
+    object-fit: cover
+    object-position: center
+    border-radius: 30px
+  &-text
+    width: calc(100% - 370px - 40px)
+    margin-left: auto
+    h2
+      font-size: 48px
+      font-weight: 700
+      line-height: 1.1
+    p
+      font-size: 18px
+      line-height: 1.1
+      margin: 25px 0
+      max-width: 310px
+  &-btn
+    @include flexbox
+    align-items: flex-start
+    a
+      display: block
+      padding: 20px 35px
+      font-size: 14px
+      font-weight: 500
+      line-height: 10px
+      color: #fff
+      background: var(--color-orange)
+      border-radius: 99px
+      i
+        font-style: normal
+        position: relative
+        z-index: 5
+        pointer-events: none

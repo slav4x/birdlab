@@ -1,0 +1,160 @@
+.affiliate
+  &-make
+    padding-top: 90px
+    h4
+      font-size: 24px
+      font-weight: 400
+      margin-bottom: 20px
+    img
+      border-radius: 30px
+      height: 400px
+      width: 100%
+      object-fit: cover
+      object-position: center
+  &-recommend
+    padding-top: 120px
+    h4
+      font-size: 24px
+      font-weight: 400
+      margin-bottom: 20px
+      max-width: 500px
+  &-how
+    padding-top: 120px
+    &__item
+      margin-bottom: 14px
+      padding: 50px
+      border-radius: 30px
+      background: #f5f5f5
+      font-size: 28px
+      line-height: 1.2
+      p
+        position: relative
+        padding-left: 40px
+        &::before
+          content: ''
+          position: absolute
+          top: 10px
+          left: 0
+          width: 12px
+          height: 12px
+          background: var(--color-orange)
+          border-radius: 100%
+    &__table
+      padding: 50px
+      border-radius: 30px
+      background: url(../img/how.jpg) no-repeat center / cover
+      &-row
+        @include flexbox
+        align-items: flex-start
+        justify-content: space-between
+        font-size: 28px
+        font-weight: 500
+        line-height: 1.2
+        padding: 15px 0
+        border-bottom: 1px solid var(--color-black)
+        &:first-child
+          font-size: 16px
+          padding: 0 0 30px
+          border: 0
+        &:last-child
+          padding-bottom: 0
+          border: 0
+  &-example
+    padding-top: 120px
+    img
+      height: 280px
+      width: 100%
+      object-fit: cover
+      object-position: center
+      border-radius: 30px
+    ul
+      padding: 50px 50px 0
+      counter-reset: list
+      li
+        padding: 30px 0
+        border-bottom: 1px solid var(--color-black)
+        position: relative
+        font-size: 24px
+        font-weight: 500
+        line-height: 1.2
+        padding-left: 70px
+        counter-increment: list
+        &::before
+          content: counter(list, decimal-leading-zero)
+          position: absolute
+          top: 30px
+          left: 0
+        &:first-child
+          padding-top: 0
+          &::before
+            top: 0
+        &:last-child
+          padding-bottom: 0
+          border: 0
+  &-more
+    padding-top: 120px
+    &__block
+      border-radius: 30px
+      padding: 50px
+      background: url(../img/more.jpg) no-repeat center / cover
+      h2
+        font-size: 52px
+        font-weight: 700
+        line-height: 1.1
+        margin-bottom: 25px
+      h3
+        font-weight: 500
+        font-size: 24px
+        line-height: 1.1
+      h4
+        font-size: 150px
+        line-height: 1
+        font-weight: 400
+        @include flexbox
+        align-items: flex-start
+        position: relative
+        z-index: 5
+        margin-top: 10px
+        span
+          font-size: 24px
+          margin-top: 30px
+          margin-left: 10px
+        &::before
+          content: ''
+          position: absolute
+          top: 10px
+          left: -10px
+          background: url("data:image/svg+xml,%3Csvg width='543' height='147' viewBox='0 0 543 147' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M241.885 137.576C300.615 135.16 366.011 130.075 430.085 118.387C449.98 114.758 469.636 110.539 487.874 103.978C496.093 101.021 504.135 97.6127 511.286 93.6538C516.499 90.7671 521 86.9463 524.283 83.0093C532.137 73.5843 529.614 64.1226 517.066 57.5685C509.699 53.7243 501.226 50.5457 492.583 48.0063C467.4 40.6071 440.817 35.8168 413.684 32.2233C391.22 29.2493 368.377 28.4317 345.449 28.0882C342.75 28.0481 339.813 28.2307 337.446 27.6008C335.556 27.099 333.011 25.4319 333.192 24.4372C333.452 23.024 335.574 21.327 337.595 20.543C339.487 19.8105 342.285 20.0461 344.692 19.968C381.937 18.7513 418.023 22.6593 453.217 29.6087C470.383 32.9957 487.244 37.1624 503.68 41.7917C512.318 44.2258 520.492 47.8693 527.564 51.9359C542.508 60.5218 545.807 72.5906 537.787 84.7549C533.61 91.0932 527.127 96.3299 519.122 100.815C505.01 108.718 488.663 113.96 471.628 118.377C438.698 126.914 404.504 132.182 369.91 136.31C328.741 141.22 287.313 144.441 245.636 145.967C195.722 147.797 146.059 147.438 97.0543 141.188C77.5137 138.694 58.6984 134.816 41.2312 128.58C29.8637 124.522 19.4103 119.691 11.3732 112.956C-1.64654 102.049 -3.24762 90.1391 5.8395 77.4452C10.9472 70.3147 18.6116 64.366 27.2349 58.9176C49.9939 44.5491 76.9832 34.5994 105.644 26.5135C143.015 15.9655 182.096 9.63774 221.97 5.43572C273.065 0.052687 324.315 -0.800867 375.565 1.55422C419.816 3.58793 463.496 7.74238 505.551 16.9487C510.933 18.1267 516.143 19.6386 521.374 21.0815C525.034 22.092 527.43 23.7481 525.948 26.6015C524.84 28.7309 521.345 29.4481 516.657 28.1926C490.14 21.0912 462.03 17.9009 433.891 14.7872C400.932 11.1413 367.628 9.63622 334.127 9.14292C274.605 8.26333 215.969 12.8636 158.288 23.5028C127.201 29.2375 97.4087 37.1477 69.7158 48.3353C55.3902 54.124 41.946 60.6926 30.7388 68.9956C26.5225 72.1169 22.5738 75.5033 19.4376 79.1052C9.66662 90.3422 11.3956 101.085 25.2562 109.832C32.247 114.243 40.4644 118.032 48.9483 121.184C67.8633 128.213 88.88 131.601 110.321 133.906C151.446 138.326 193 138.922 241.885 137.576Z' fill='white'/%3E%3C/svg%3E%0A") no-repeat center / cover
+          width: 543px
+          height: 147px
+          z-index: -1
+      ul
+        counter-reset: list
+        margin-top: 60px
+        li
+          padding: 30px 0
+          border-bottom: 1px solid var(--color-black)
+          position: relative
+          font-size: 24px
+          font-weight: 500
+          line-height: 1.2
+          padding-left: 70px
+          counter-increment: list
+          &::before
+            content: counter(list, decimal-leading-zero)
+            position: absolute
+            top: 30px
+            left: 0
+          &:first-child
+            padding-top: 0
+            &::before
+              top: 0
+          &:last-child
+            padding-bottom: 0
+            border: 0
+      small
+        margin-top: 60px
+        display: block
+        font-weight: 500
+        line-height: 1.1
+        font-size: 16px

@@ -43,41 +43,48 @@ document.querySelectorAll('.reviews-item').forEach((item) => {
   });
 });
 
-const splide = new Splide('.splide', {
-  type: 'loop',
-  gap: '-62px',
-});
-splide.mount();
+const reviewsSlider = document.querySelector('.reviews-slider');
+if (reviewsSlider) {
+  const splide = new Splide('.reviews-slider', {
+    type: 'loop',
+    gap: '-62px',
+  });
+  splide.mount();
 
-splide.on('move', function (e) {
-  document.querySelectorAll('.reviews-item').forEach((item) => {
-    const video = item.querySelector('video');
+  splide.on('move', function (e) {
+    document.querySelectorAll('.reviews-item').forEach((item) => {
+      const video = item.querySelector('video');
 
-    if (video) {
-      video.muted = true;
-      // Возвращаем класс 'muted'
-      item.classList.add('muted');
+      if (video) {
+        video.muted = true;
+        // Возвращаем класс 'muted'
+        item.classList.add('muted');
+      }
+    });
+  });
+}
+
+const reviews = document.querySelector('.reviews');
+if (reviews) {
+  const closeReviews = reviews.querySelector('.reviews-close');
+  closeReviews.addEventListener('click', () => {
+    reviews.remove();
+  });
+}
+
+const quiz = document.querySelector('.quiz');
+if (quiz) {
+  const quizWrapper = quiz.querySelector('.quiz-wrapper');
+
+  quizWrapper.addEventListener('click', function (event) {
+    if (event.target.classList.contains('quiz-step__next')) {
+      const currentStep = document.querySelector('.quiz-step.active');
+      const nextStep = currentStep.nextElementSibling;
+
+      if (nextStep && nextStep.classList.contains('quiz-step')) {
+        currentStep.classList.remove('active');
+        nextStep.classList.add('active');
+      }
     }
   });
-});
-
-const closeReviews = document.querySelector('.reviews-close');
-const reviews = document.querySelector('.reviews');
-closeReviews.addEventListener('click', () => {
-  reviews.remove();
-});
-
-const quizSteps = document.querySelectorAll('.quiz-step');
-const quizWrapper = document.querySelector('.quiz-wrapper');
-
-quizWrapper.addEventListener('click', function (event) {
-  if (event.target.classList.contains('quiz-step__next')) {
-    let currentStep = document.querySelector('.quiz-step.active');
-    let nextStep = currentStep.nextElementSibling;
-
-    if (nextStep && nextStep.classList.contains('quiz-step')) {
-      currentStep.classList.remove('active');
-      nextStep.classList.add('active');
-    }
-  }
-});
+}
