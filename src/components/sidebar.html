@@ -3,11 +3,11 @@
 <div class="sidebar">
   <a href="/" class="sidebar-logo"><img src="img/svg/logo.svg" alt=""></a>
   <ul class="sidebar-nav">
-    <li><a href="#">Экспертность</a></li>
-    <li><a href="#">Проекты</a></li>
-    <li><a href="#">Команда</a></li>
+    <li><a href="{% if other %}index.html{% endif %}#price">Экспертность</a></li>
+    <li><a href="{% if other %}index.html{% endif %}#projects">Проекты</a></li>
+    <li><a href="{% if other %}index.html{% endif %}#team">Команда</a></li>
     <li><a href="affiliate.html">Партнерка</a></li>
-    <li><a href="#">Медиа</a></li>
+    <li><a href="{% if other %}index.html{% endif %}#media">Медиа</a></li>
     <li><a href="vacancy.html">Вакансии</a></li>
   </ul>
   <ul class="sidebar-links">
