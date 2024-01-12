@@ -43,6 +43,21 @@ document.querySelectorAll('.reviews-item').forEach((item) => {
   });
 });
 
+const heroSlider = document.querySelector('.hero-slider');
+if (heroSlider) {
+  const splide = new Splide('.hero-slider', {
+    type: 'loop',
+    gap: '10px',
+    autoScroll: {
+      speed: 0.2,
+      pauseOnHover: false,
+      pauseOnFocus: false,
+    },
+    autoWidth: true,
+  });
+  splide.mount(window.splide.Extensions);
+}
+
 const reviewsSlider = document.querySelector('.reviews-slider');
 if (reviewsSlider) {
   const splide = new Splide('.reviews-slider', {
