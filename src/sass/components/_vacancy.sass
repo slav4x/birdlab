@@ -1,0 +1,23 @@
+.vacancy
+  padding-top: 90px
+  &-list
+    font-size: 24px
+    font-weight: 500
+    line-height: 1.4
+    max-width: 570px
+    li
+      position: relative
+      padding-left: 36px
+      margin-top: 20px
+      &::before
+        content: '—'
+        position: absolute
+        top: 0
+        left: 0
+      &.color
+        background: linear-gradient(261deg, #7331FF 52.89%, #E4AB54 65.36%, #1284B5 74.75%)
+        background-clip: text
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        &::before
+          -webkit-text-fill-color: #1284B5

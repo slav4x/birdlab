@@ -1,0 +1,25 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'BirdLab - Вакансии' %}
+
+{% block content %}
+
+<div class="vacancy">
+  <h2 class="title">Нам нужны новые люди.<br> В первую очередь:</h2>
+  <ul class="vacancy-list">
+    <li class="color">Контент-менеджер</li>
+    <li>Арт-директор</li>
+    <li>Дизайнеры на оплачиваемую стажировку</li>
+    <li>Моушен-дизайнер</li>
+  </ul>
+</div>
+
+<div class="manager">
+  <img src="img/manager-2.jpg" alt="" loading="lazy">
+  <div class="manager-text">
+    <h2>Напишите менеджеру чтобы узнать, актуальна<br> ли вакансия</h2>
+    <p>Поможет по любым вопросам. Если будут новые вакансии — она узнает о них первой</p>
+    <div class="manager-btn"><a href="https://t.me/daria_birdlab" target="_blank" class="hover"><span class="back"><span></span></span><i>Написать</i></a></div>
+  </div>
+</div>
+
+{% endblock %}
