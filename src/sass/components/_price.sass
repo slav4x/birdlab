@@ -1,6 +1,6 @@
 .price
-  padding-top: 60px
-  margin-top: 60px
+  padding-top: var(--margin)
+  margin-top: var(--margin)
   .title
     font-size: 38px
   &-grid
@@ -17,7 +17,7 @@
       height: 320px
       width: 100%
       overflow: hidden
-      border-radius: 30px
+      border-radius: var(--radius)
       background: #eee
       position: relative
       margin-bottom: 20px
@@ -27,6 +27,8 @@
         object-fit: cover
         object-position: center
         transition: .25s
+      video
+        transform: scale(1.01, 1.01)
     &__value
       position: absolute
       z-index: 10
@@ -51,7 +53,6 @@
       gap: 4px
       font-weight: 600
       text-transform: uppercase
-      color: #fff
       &::after
         content: ''
         display: block

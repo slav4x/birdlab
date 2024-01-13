@@ -21,22 +21,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.querySelectorAll('.reviews-item').forEach((item) => {
   item.addEventListener('click', function () {
-    // Находим видео внутри текущего элемента
     const video = this.querySelector('video');
 
     if (video) {
       if (video.muted) {
-        // Если видео было без звука, включаем звук
         video.muted = false;
-        // Убираем класс 'muted'
         this.classList.remove('muted');
-        // Перезапускаем видео с начала
         video.currentTime = 0;
         video.play();
       } else {
-        // Если видео было со звуком, выключаем звук
         video.muted = true;
-        // Возвращаем класс 'muted'
         this.classList.add('muted');
       }
     }
@@ -49,6 +43,7 @@ if (heroSlider) {
     type: 'loop',
     gap: '10px',
     autoScroll: {
+      autoStart: true,
       speed: 0.2,
       pauseOnHover: false,
       pauseOnFocus: false,
@@ -72,7 +67,6 @@ if (reviewsSlider) {
 
       if (video) {
         video.muted = true;
-        // Возвращаем класс 'muted'
         item.classList.add('muted');
       }
     });
@@ -87,19 +81,14 @@ if (reviews) {
   });
 }
 
-const quiz = document.querySelector('.quiz');
-if (quiz) {
-  const quizWrapper = quiz.querySelector('.quiz-wrapper');
+document.querySelector('.quiz')?.addEventListener('click', function (event) {
+  if (event.target.classList.contains('quiz-step__next')) {
+    const currentStep = event.currentTarget.querySelector('.quiz-step.active');
+    const nextStep = currentStep?.nextElementSibling;
 
-  quizWrapper.addEventListener('click', function (event) {
-    if (event.target.classList.contains('quiz-step__next')) {
-      const currentStep = document.querySelector('.quiz-step.active');
-      const nextStep = currentStep.nextElementSibling;
-
-      if (nextStep && nextStep.classList.contains('quiz-step')) {
-        currentStep.classList.remove('active');
-        nextStep.classList.add('active');
-      }
+    if (nextStep?.classList.contains('quiz-step')) {
+      currentStep.classList.remove('active');
+      nextStep.classList.add('active');
     }
-  });
-}
+  }
+});

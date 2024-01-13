@@ -1,0 +1,350 @@
+@media(max-width: 980px)
+  :root
+    --radius: 20px
+    --margin: 40px
+
+  .wrapper
+    overflow: hidden
+
+  .sidebar
+    width: 100%
+    position: relative
+    padding: 15px 0 0
+    height: auto
+    min-height: 0
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    &-nav,
+    &-links,
+    &-copy
+      display: none
+    &-logo
+      img
+        height: 36px
+    &-burger
+      display: flex
+      height: 36px
+      @include flexbox
+      flex-direction: column
+      align-items: flex-end
+      justify-content: center
+      cursor: pointer
+      span
+        height: 2px
+        border-radius: 4px
+        background: var(--color-black)
+        margin: 4px 0
+        display: block
+        &:first-child
+          width: 34px
+        &:last-child
+          width: 22px
+
+  .btn-contact
+    top: 15px
+    right: 64px
+    position: absolute
+    font-size: 14px
+    gap: 5px
+    padding: 11px
+    &::before
+      width: 8px
+      height: 8px
+
+  .main
+    max-width: 100%
+    width: 100%
+
+  .title
+    font-size: 32px
+    margin-bottom: 20px
+
+  .hero
+    padding-top: 60px
+    &-title
+      font-size: 36px
+      span
+        &::after
+          width: 158px
+          height: 13px
+    &-experts
+      padding: 25px 20px
+      p
+        font-size: 14px
+        margin-bottom: 10px
+    &-slider
+      img
+        width: 46px
+        height: 46px
+
+  .price .title
+    font-size: 24px
+
+  .price-item
+    width: 100% !important
+    &__image
+      height: 390px
+
+  .work
+    &-item
+      padding: 25px 30px
+      &__title
+        width: 100%
+        font-size: 22px
+        padding-left: 24px
+        br
+          display: none
+        &::before
+          width: 10px
+          height: 10px
+          top: 8px
+      &__text
+        width: 100%
+        font-size: 16px
+        margin-top: 20px
+        p
+          margin-top: 14px
+
+  .projects-item
+    width: 100% !important
+    &__image
+      height: 480px
+    &__title
+      font-size: 24px
+      br
+        display: none
+      &-label
+        span
+          right: 0
+          top: 3px
+    &__labels
+      font-size: 14px
+      top: 10px
+      left: 10px
+    a.projects-item__title
+      padding-right: 32px
+      &::after
+        width: 24px
+        height: 24px
+        right: 0
+        top: 5px
+        background-size: cover
+    &__text
+      left: 20px
+      right: 20px
+      bottom: 20px
+      font-size: 14px
+      gap: 10px
+      li
+        width: 100% !important
+        flex: initial !important
+        br
+          display: none
+    &__quote
+      border: 0
+      padding-top: 0
+      &-author
+        width: 100%
+        img
+          width: 46px
+          height: 46px
+        span
+          width: calc(100% - 46px - 12px)
+        h4
+          font-size: 16px
+        p
+          font-size: 14px
+      &-text
+        max-width: 100%
+        font-size: 14px
+        padding-left: 70px
+        margin-top: 25px
+        margin-right: 0
+        &::before
+          left: 0
+
+  .expert
+    padding: 25px 20px
+    &-title
+      font-size: 24px
+    &-grid
+      grid-template-columns: repeat(4, 1fr)
+
+  .team-ceo
+    &__image
+      width: 100%
+      height: 440px
+    &__text
+      width: 100%
+      padding: 25px 20px
+      ul
+        max-width: 100%
+        margin-top: 20px
+  .team-block
+    padding: 25px 20px
+    .title
+      font-size: 24px
+  .team
+    &-grid
+      width: calc(100% + 50px)
+    &-item
+      width: calc(100% / 3)
+      img
+        width: 100%
+        max-width: initial
+        height: auto
+        aspect-ratio: 1 / 1
+      p
+        font-size: 11px
+        line-height: 14px
+        padding: 2px 4px
+        &::before
+          width: 12px
+          height: 12px
+          background-size: cover
+          top: -8px
+          left: -8px
+      &:nth-child(1),
+      &:nth-child(3)
+        p
+          bottom: initial
+          top: 16px
+      &:nth-child(4),
+      &:nth-child(6)
+        p
+          top: initial
+          bottom: 16px
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3)
+        padding-bottom: 0
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6)
+        padding-top: 0
+        margin-top: -25px
+
+  .quiz
+    &-step
+      padding: 25px 20px
+      min-height: 480px
+      &__content
+        width: 100%
+      &__title
+        font-size: 24px
+      &__variables
+        margin-top: 40px
+        max-width: 100%
+        width: 100%
+        flex-direction: column
+        padding: 0
+        gap: 25px
+        textarea
+          max-width: 100%
+
+  .quiz-manager
+    align-items: flex-start
+    span
+      h4
+        font-size: 24px
+        a
+          &::before
+            width: 92px
+            height: 9px
+            background-size: cover
+
+  .media-item
+    width: 100%
+    &__image
+      height: 360px
+    &__title
+      padding-right: 32px
+      &::after
+        right: 0
+      &-label
+        padding-right: 80px
+        span
+          right: 0
+
+  .affiliate-make
+    padding-top: 60px
+    h4
+      font-size: 16px
+      max-width: 100%
+  .affiliate-recommend
+    h4
+      font-size: 16px
+      max-width: 100%
+
+  .affiliate-how__item
+    padding: 25px 20px
+    font-size: 21px
+    p
+      padding-left: 24px
+      &::before
+        width: 10px
+        height: 10px
+        top: 7px
+
+  .affiliate-how__table
+    padding: 25px 20px
+    &-row
+      font-size: 24px
+      span
+        display: none
+      p
+        width: calc(100% / 2 - 10px)
+        &:last-child
+          text-align: right
+      &:first-child
+        font-size: 14px
+
+  .affiliate-example ul
+    padding: 30px 0 0
+    li
+      font-size: 18px
+      padding-left: 45px
+
+  .affiliate-more__block
+    padding: 25px 20px
+    h2
+      font-size: 32px
+      margin-bottom: 15px
+    h3
+      font-size: 18px
+    ul
+      li
+        font-size: 18px
+        padding-left: 45px
+    h4
+      font-size: 52px
+      padding-left: 45px
+      font-weight: 600
+      span
+        font-size: 18px
+        margin-top: 10px
+      &::before
+        width: 240px
+        height: 63px
+        left: 10px
+        top: -5px
+    small
+      font-size: 14px
+
+  .manager
+    img
+      width: 100%
+      height: 420px
+    &-text
+      width: 100%
+      padding: 40px 25px 0
+      p
+        max-width: 100%
+
+  .vacancy
+    padding-top: 60px
+    &-list
+      font-size: 18px
+      li
+        margin-top: 10px

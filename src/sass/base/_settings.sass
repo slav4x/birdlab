@@ -117,13 +117,14 @@ input, textarea
 .manager
   @include flexbox
   align-items: center
-  padding-top: 120px
+  padding-top: var(--margin)
+  margin-top: var(--margin)
   img
     width: 370px
     height: 370px
     object-fit: cover
     object-position: center
-    border-radius: 30px
+    border-radius: var(--radius)
   &-text
     width: calc(100% - 370px - 40px)
     margin-left: auto

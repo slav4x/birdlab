@@ -6,24 +6,26 @@
       font-weight: 400
       margin-bottom: 20px
     img
-      border-radius: 30px
+      border-radius: var(--radius)
       height: 400px
       width: 100%
       object-fit: cover
       object-position: center
   &-recommend
-    padding-top: 120px
+    padding-top: var(--margin)
+    margin-top: var(--margin)
     h4
       font-size: 24px
       font-weight: 400
       margin-bottom: 20px
       max-width: 500px
   &-how
-    padding-top: 120px
+    padding-top: var(--margin)
+    margin-top: var(--margin)
     &__item
       margin-bottom: 14px
       padding: 50px
-      border-radius: 30px
+      border-radius: var(--radius)
       background: #f5f5f5
       font-size: 28px
       line-height: 1.2
@@ -41,7 +43,7 @@
           border-radius: 100%
     &__table
       padding: 50px
-      border-radius: 30px
+      border-radius: var(--radius)
       background: url(../img/how.jpg) no-repeat center / cover
       &-row
         @include flexbox
@@ -60,13 +62,14 @@
           padding-bottom: 0
           border: 0
   &-example
-    padding-top: 120px
+    padding-top: var(--margin)
+    margin-top: var(--margin)
     img
       height: 280px
       width: 100%
       object-fit: cover
       object-position: center
-      border-radius: 30px
+      border-radius: var(--radius)
     ul
       padding: 50px 50px 0
       counter-reset: list
@@ -92,9 +95,10 @@
           padding-bottom: 0
           border: 0
   &-more
-    padding-top: 120px
+    padding-top: var(--margin)
+    margin-top: var(--margin)
     &__block
-      border-radius: 30px
+      border-radius: var(--radius)
       padding: 50px
       background: url(../img/more.jpg) no-repeat center / cover
       h2
@@ -130,7 +134,7 @@
           z-index: -1
       ul
         counter-reset: list
-        margin-top: 60px
+        margin-top: var(--margin)
         li
           padding: 30px 0
           border-bottom: 1px solid var(--color-black)
@@ -153,7 +157,7 @@
             padding-bottom: 0
             border: 0
       small
-        margin-top: 60px
+        margin-top: var(--margin)
         display: block
         font-weight: 500
         line-height: 1.1
