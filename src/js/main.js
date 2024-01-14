@@ -56,8 +56,28 @@ document.addEventListener('DOMContentLoaded', function () {
     splide.mount(window.splide.Extensions);
   }
 
-  const reviewsSlider = document.querySelector('.reviews-slider');
-  if (reviewsSlider) {
+  const reviews = document.querySelector('.reviews');
+  if (reviews) {
+    const closeReviews = reviews.querySelector('.reviews-close');
+    const openReviews = document.querySelector('.reviews-open');
+
+    closeReviews.addEventListener('click', () => {
+      reviews.classList.toggle('hide');
+
+      document.querySelectorAll('.reviews-item').forEach((item) => {
+        const video = item.querySelector('video');
+
+        if (video) {
+          video.muted = true;
+          item.classList.add('muted');
+        }
+      });
+    });
+
+    openReviews.addEventListener('click', () => {
+      reviews.classList.toggle('hide');
+    });
+
     const splide = new Splide('.reviews-slider', {
       type: 'loop',
       gap: '-62px',
@@ -73,14 +93,6 @@ document.addEventListener('DOMContentLoaded', function () {
           item.classList.add('muted');
         }
       });
-    });
-  }
-
-  const reviews = document.querySelector('.reviews');
-  if (reviews) {
-    const closeReviews = reviews.querySelector('.reviews-close');
-    closeReviews.addEventListener('click', () => {
-      reviews.remove();
     });
   }
 

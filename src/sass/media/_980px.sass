@@ -370,3 +370,58 @@
       font-size: 18px
       li
         margin-top: 10px
+
+  .reviews
+    left: 0
+    right: 194px
+    bottom: 20px
+    margin: 0 auto
+    opacity: 0
+    pointer-events: none
+    &::before
+      content: ''
+      position: absolute
+      bottom: -5px
+      left: 0
+      right: 0
+      margin: 0 auto
+      width: 16px
+      height: 6px
+      background: url("data:image/svg+xml,%3Csvg width='32' height='12' viewBox='0 0 32 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1175_496)'%3E%3Cg filter='url(%23filter0_d_1175_496)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.5439 9.07201C14.0865 11.7229 17.9158 11.7229 19.4584 9.07201L20.1029 7.9645C22.2518 4.27171 26.2021 2 30.4746 2H43C43.5523 2 44 1.55228 44 1V1C44 0.447715 43.5523 0 43 0H26.3757C25.6491 0 25.196 -0.787856 25.5615 -1.4159V-1.4159C27.1133 -4.08255 25.1895 -7.42773 22.1043 -7.42773H9.89805C6.81277 -7.42773 4.88904 -4.08254 6.4408 -1.4159V-1.4159C6.80627 -0.787855 6.3532 0 5.62656 0H-11C-11.5523 0 -12 0.447715 -12 1V1C-12 1.55228 -11.5523 2 -11 2H1.52769C5.80023 2 9.75052 4.27171 11.8994 7.96451L12.5439 9.07201Z' fill='white'/%3E%3C/g%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d_1175_496' x='-59.0375' y='-31.1958' width='150.075' height='112.563' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeMorphology radius='9.97261' operator='erode' in='SourceAlpha' result='effect1_dropShadow_1175_496'/%3E%3CfeOffset dy='23.2694'/%3E%3CfeGaussianBlur stdDeviation='28.505'/%3E%3CfeComposite in2='hardAlpha' operator='out'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_1175_496'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_1175_496' result='shape'/%3E%3C/filter%3E%3CclipPath id='clip0_1175_496'%3E%3Crect width='32' height='12' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A") no-repeat center / cover
+    &.hide
+      right: 194px
+      bottom: 70px
+      opacity: 1
+      pointer-events: auto
+
+  .fixed-nav
+    @include flexbox
+    align-items: center
+    justify-content: center
+    position: fixed
+    bottom: 10px
+    left: 0
+    right: 0
+    z-index: 80
+    gap: 10px
+    li
+      a
+        @include flexbox
+        align-items: center
+        line-height: 12px
+        font-weight: 500
+        padding: 17px 15px
+        border-radius: 99px
+        background: #fff
+        border: 1px solid rgba(209, 209, 209, 0.30)
+        gap: 5px
+        img
+          width: 14px
+          height: 14px
+          border-radius: 100%
+          object-fit: cover
+          object-position: center
+      &:last-child a
+        background: var(--color-orange)
+        border-color: var(--color-orange)
+        color: #fff
