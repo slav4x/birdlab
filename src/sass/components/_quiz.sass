@@ -16,20 +16,21 @@
     &.active
       display: flex
     &__content
-      width: calc(100% - 100px)
+      width: calc(100% - 200px)
       @include flexbox
       flex-direction: column
       align-items: flex-start
+      margin-right: auto
       span
         display: block
         font-size: 18px
         opacity: 0.4
         margin-bottom: 20px
     &__title
-      font-size: 34px
+      font-size: 32px
       font-weight: 400
     &__next
-      margin-left: auto
+      margin-left: 10px
       font-size: 18px
       line-height: 14px
       padding: 12px 14px
@@ -37,6 +38,14 @@
       border-radius: 99px
       cursor: pointer
       margin-top: auto
+    &__prev
+      font-size: 18px
+      line-height: 14px
+      padding: 12px 14px
+      border-radius: 99px
+      cursor: pointer
+      margin-top: auto
+      opacity: 0.4
     &__variables
       margin-top: auto
       padding-bottom: 10px
@@ -92,6 +101,12 @@
     &[data-step="1"]
       .quiz-step__variables
         max-width: 400px
+    &.last
+      .quiz-step__content
+        max-width: 100%
+        width: 100%
+      .quiz-step__title
+        max-width: 500px
   &-manager
     @include flexbox
     align-items: center
@@ -126,3 +141,29 @@
       p
         font-size: 18px
         margin-top: 20px
+
+  &-form
+    @include flexbox
+    align-items: flex-start
+    gap: 6px
+    width: 100%
+    margin-top: auto
+  &-input
+    height: 42px
+    border-radius: 999px
+    background: #fff
+    padding: 0
+    padding-left: 18px
+    border: 1px solid rgba(0,0,0,.1)
+    flex: 1
+    &:first-child
+      flex: initial
+      width: 190px
+  &-btn
+    height: 42px
+    border-radius: 999px
+    font-size: 18px
+    font-weight: 500
+    background: var(--color-orange)
+    color: #fff
+    padding: 0 18px

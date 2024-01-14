@@ -23,15 +23,17 @@ document.querySelectorAll('.reviews-item').forEach((item) => {
   item.addEventListener('click', function () {
     const video = this.querySelector('video');
 
-    if (video) {
-      if (video.muted) {
-        video.muted = false;
-        this.classList.remove('muted');
-        video.currentTime = 0;
-        video.play();
-      } else {
-        video.muted = true;
-        this.classList.add('muted');
+    if (item.parentNode.classList.contains('is-active')) {
+      if (video) {
+        if (video.muted) {
+          video.muted = false;
+          this.classList.remove('muted');
+          video.currentTime = 0;
+          video.play();
+        } else {
+          video.muted = true;
+          this.classList.add('muted');
+        }
       }
     }
   });
@@ -82,13 +84,16 @@ if (reviews) {
 }
 
 document.querySelector('.quiz')?.addEventListener('click', function (event) {
-  if (event.target.classList.contains('quiz-step__next')) {
-    const currentStep = event.currentTarget.querySelector('.quiz-step.active');
-    const nextStep = currentStep?.nextElementSibling;
+  const isNext = event.target.classList.contains('quiz-step__next');
+  const isPrev = event.target.classList.contains('quiz-step__prev');
 
-    if (nextStep?.classList.contains('quiz-step')) {
+  if (isNext || isPrev) {
+    const currentStep = event.currentTarget.querySelector('.quiz-step.active');
+    const targetStep = isNext ? currentStep?.nextElementSibling : currentStep?.previousElementSibling;
+
+    if (targetStep?.classList.contains('quiz-step')) {
       currentStep.classList.remove('active');
-      nextStep.classList.add('active');
+      targetStep.classList.add('active');
     }
   }
 });
