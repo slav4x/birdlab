@@ -113,17 +113,52 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let isOpen = false;
 
-  document.querySelector('.sidebar-burger').addEventListener('click', function () {
-    isOpen = !isOpen;
+  const sidebarBurger = document.querySelector('.sidebar-burger');
+  const sidebarMobile = document.querySelector('.sidebar-mobile');
 
-    const sidebarBurger = document.querySelector('.sidebar-burger');
-    const sidebarMobile = document.querySelector('.sidebar-mobile');
+  sidebarBurger.addEventListener('click', function () {
+    isOpen = !isOpen;
 
     sidebarBurger.classList.toggle('open');
     sidebarMobile.classList.toggle('show');
 
     document.body.style.overflow = isOpen ? 'hidden' : 'visible';
   });
+
+  const sidebarLinks = sidebarMobile.querySelectorAll('.sidebar-nav a');
+  sidebarLinks.forEach((el) => {
+    el.addEventListener('click', () => {
+      sidebarBurger.classList.toggle('open');
+      sidebarMobile.classList.toggle('show');
+      document.body.style.overflow = 'visible';
+    });
+  });
+
+  // Генерация случайного токена
+  function generateToken() {
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var token = '';
+    for (var i = 0; i < 30; i++) {
+      token += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return token;
+  }
+
+  // Установка токена в скрытое поле формы
+  function setToken(form) {
+    var token = generateToken();
+    var hiddenInput = document.createElement('input');
+    hiddenInput.type = 'hidden';
+    hiddenInput.name = 't';
+    hiddenInput.value = token;
+    form.appendChild(hiddenInput);
+  }
+
+  // Инициализация токена для каждой формы на странице
+  var forms = document.getElementsByTagName('form');
+  for (var i = 0; i < forms.length; i++) {
+    setToken(forms[i]);
+  }
 });
 
 window.addEventListener('resize', function () {

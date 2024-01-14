@@ -6,7 +6,7 @@
 
 <div class="concept">
   <h2 class="title">Оставьте заявку, чтобы увидеть концепцию вашего проекта <span>уже&nbsp;завтра</span></h2>
-  <form action="#" method="post">
+  <form action="send.php" method="post">
     <input type="text" name="name" placeholder="Ваше имя" />
     <input type="text" name="contact" placeholder="Ник или номер телефона в Telegram" />
     <textarea name="comment" placeholder="Комментарий к заказу, если есть что добавить"></textarea>
@@ -15,6 +15,7 @@
       <p><span>Прислать нам файл <i>до 25 mb</i></span></p>
     </label>
     <button type="submit">Отправить заявку</button>
+    <input type="hidden" name="form" value="Бесплатный концепт" />
   </form>
 </div>
 

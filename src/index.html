@@ -487,7 +487,7 @@
 
 <div class="quiz">
   <h2 class="title">Ответьте на 5 вопросов, чтобы узнать стоимость проекта <span>и получить бесплатный концепт</span></h2>
-  <div class="quiz-wrapper">
+  <form action="send.php" method="post" class="quiz-wrapper">
     <div class="quiz-step active" data-step="1">
       <div class="quiz-step__content">
         <span>01</span>
@@ -577,10 +577,11 @@
           <input type="text" name="name" placeholder="Ваше имя" class="quiz-input" />
           <input type="text" name="contact" placeholder="Ник в tg или номер телефона" class="quiz-input" />
           <button stype="submit" class="quiz-btn">Отправить заявку</button>
+          <input type="hidden" name="form" value="Квиз на бесплатный концепт" />
         </div>
       </div>
     </div>
-  </div>
+  </form>
   <div class="quiz-manager">
     <img src="img/manager.jpg" alt="" loading="lazy">
     <span>
