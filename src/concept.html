@@ -6,12 +6,12 @@
 
 <div class="concept">
   <h2 class="title">Оставьте заявку, чтобы увидеть концепцию вашего проекта <span>уже&nbsp;завтра</span></h2>
-  <form action="send.php" method="post">
+  <form action="send.php" enctype="multipart/form-data" method="post">
     <input type="text" name="name" placeholder="Ваше имя" />
-    <input type="text" name="contact" placeholder="Ник или номер телефона в Telegram" />
+    <input type="text" name="contact" placeholder="Ник или номер телефона в Telegram" required />
     <textarea name="comment" placeholder="Комментарий к заказу, если есть что добавить"></textarea>
     <label class="file">
-      <input type="file" />
+      <input type="file" name="file" />
       <p><span>Прислать нам файл <i>до 25 mb</i></span></p>
     </label>
     <button type="submit">Отправить заявку</button>

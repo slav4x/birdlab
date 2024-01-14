@@ -523,11 +523,11 @@
         <h3 class="quiz-step__title">У вас есть готовая<br> структура / тексты?</h3>
         <div class="quiz-step__variables">
           <label>
-            <input type="checkbox" name="quiz_2[]" value="Есть" />
+            <input type="radio" name="quiz_2" value="Есть" />
             <p>Есть</p>
           </label>
           <label>
-            <input type="checkbox" name="quiz_2[]" value="Нет, нужно разработать" checked />
+            <input type="radio" name="quiz_2" value="Нет, нужно разработать" checked />
             <p>Нет, нужно разработать</p>
           </label>
         </div>
@@ -575,7 +575,7 @@
         <h3 class="quiz-step__title">Заполните форму, и мы свяжемся с вами в ближайшее время</h3>
         <div class="quiz-form">
           <input type="text" name="name" placeholder="Ваше имя" class="quiz-input" />
-          <input type="text" name="contact" placeholder="Ник в tg или номер телефона" class="quiz-input" />
+          <input type="text" name="contact" placeholder="Ник в tg или номер телефона" class="quiz-input" required />
           <button stype="submit" class="quiz-btn">Отправить заявку</button>
           <input type="hidden" name="form" value="Квиз на бесплатный концепт" />
         </div>

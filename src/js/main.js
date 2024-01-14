@@ -159,6 +159,18 @@ document.addEventListener('DOMContentLoaded', function () {
   for (var i = 0; i < forms.length; i++) {
     setToken(forms[i]);
   }
+
+  var formInit = document.querySelectorAll('form');
+  formInit.forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      const button = form.querySelector('button');
+
+      button.style.opacity = 0.5;
+      button.style.cursor = 'not-allowed';
+      button.disabled = true;
+      button.textContent = 'Отправка...';
+    });
+  });
 });
 
 window.addEventListener('resize', function () {
