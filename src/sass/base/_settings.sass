@@ -157,3 +157,72 @@ input, textarea
 
 .fixed-nav
   display: none
+
+.loader
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: #fff
+  z-index: 200
+  @include flexbox
+  align-items: center
+  justify-content: center
+  overflow: hidden
+  animation: loader 1.7s ease both
+  opacity: 1
+  &-frame
+    position: absolute
+    opacity: 0
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    @include flexbox
+    align-items: center
+    justify-content: center
+    background: #fff
+    &:nth-child(1)
+      animation: initSymbol .5s steps(1, end)
+      z-index: 1
+    &:nth-child(2)
+      animation: initSymbol .5s steps(1, end) .1s
+      z-index: 2
+    &:nth-child(3)
+      animation: initSymbol .5s steps(1, end) .2s
+      z-index: 3
+    &:nth-child(4)
+      animation: initSymbol .5s steps(1, end) .3s
+      z-index: 4
+    &:nth-child(5)
+      animation: initSymbol .5s steps(1, end) .4s
+      z-index: 5
+    &:nth-child(6)
+      animation: initSymbolEnd 1.75s steps(1, end)
+      z-index: 6
+
+@keyframes initSymbol
+  0%
+    opacity: 0
+  50%
+    opacity: 1
+  100%
+    opacity: 1
+
+@keyframes initSymbolEnd
+  0%
+    opacity: 0
+  50%
+    opacity: 1
+  100%
+    opacity: 1
+
+@keyframes loader
+  0%
+    opacity: 1
+  70%
+    opacity: 1
+  100%
+    opacity: 0
+    pointer-events: none
