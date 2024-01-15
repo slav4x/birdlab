@@ -170,7 +170,7 @@ input, textarea
   align-items: center
   justify-content: center
   overflow: hidden
-  animation: loader 1.7s ease both
+  animation: loader 1.75s ease both
   opacity: 1
   &-frame
     position: absolute
@@ -187,30 +187,25 @@ input, textarea
       animation: initSymbol .5s steps(1, end)
       z-index: 1
     &:nth-child(2)
-      animation: initSymbol .5s steps(1, end) .1s
+      animation: initSymbol .5s steps(1, end) .125s
       z-index: 2
     &:nth-child(3)
-      animation: initSymbol .5s steps(1, end) .2s
+      animation: initSymbol .5s steps(1, end) .25s
       z-index: 3
     &:nth-child(4)
-      animation: initSymbol .5s steps(1, end) .3s
+      animation: initSymbol .5s steps(1, end) .375s
       z-index: 4
     &:nth-child(5)
-      animation: initSymbol .5s steps(1, end) .4s
+      animation: initSymbol .5s steps(1, end) .5s
       z-index: 5
     &:nth-child(6)
-      animation: initSymbolEnd 1.75s steps(1, end)
+      animation: initSymbol .5s steps(1, end) .625s
       z-index: 6
+    &:nth-child(7)
+      animation: initSymbol .5s steps(1, end) .75s both
+      z-index: 7
 
 @keyframes initSymbol
-  0%
-    opacity: 0
-  50%
-    opacity: 1
-  100%
-    opacity: 1
-
-@keyframes initSymbolEnd
   0%
     opacity: 0
   50%
@@ -221,7 +216,7 @@ input, textarea
 @keyframes loader
   0%
     opacity: 1
-  70%
+  80%
     opacity: 1
   100%
     opacity: 0
