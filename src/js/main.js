@@ -96,6 +96,25 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  document.querySelector('.quiz')?.addEventListener('change', function (event) {
+    const currentStep = document.querySelector('.quiz-step.active');
+    if (currentStep) {
+      const inputs = currentStep.querySelectorAll('input[type="checkbox"], input[type="radio"]');
+      const textarea = currentStep.querySelector('textarea');
+
+      if (currentStep.dataset.step !== '3') {
+        const hasCheckedInput = Array.from(inputs).some((input) => input.checked);
+        const hasText = textarea && textarea.value.trim() !== '';
+
+        if (hasCheckedInput || hasText) {
+          currentStep.classList.remove('no-checked');
+        } else {
+          currentStep.classList.add('no-checked');
+        }
+      }
+    }
+  });
+
   document.querySelector('.quiz')?.addEventListener('click', function (event) {
     const isNext = event.target.classList.contains('quiz-step__next');
     const isPrev = event.target.classList.contains('quiz-step__prev');
@@ -105,8 +124,26 @@ document.addEventListener('DOMContentLoaded', function () {
       const targetStep = isNext ? currentStep?.nextElementSibling : currentStep?.previousElementSibling;
 
       if (targetStep?.classList.contains('quiz-step')) {
-        currentStep.classList.remove('active');
-        targetStep.classList.add('active');
+        if (isNext) {
+          const inputs = currentStep.querySelectorAll('input[type="checkbox"], input[type="radio"]');
+          const textarea = currentStep.querySelector('textarea');
+
+          if (currentStep.dataset.step === '3') {
+            // Skip checkbox and radio validation for step 3
+            currentStep.classList.remove('active');
+            targetStep.classList.add('active');
+          } else if (Array.from(inputs).some((input) => input.checked) || (textarea && textarea.value.trim() !== '')) {
+            currentStep.classList.remove('active');
+            currentStep.classList.remove('no-checked');
+            targetStep.classList.add('active');
+          } else {
+            currentStep.classList.add('no-checked');
+          }
+        } else {
+          currentStep.classList.remove('active');
+          currentStep.classList.remove('no-checked');
+          targetStep.classList.add('active');
+        }
       }
     }
   });

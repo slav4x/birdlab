@@ -7,14 +7,32 @@
   &-wrapper
     border-radius: var(--radius)
     background: #f6f6f6
+    height: 300px
+    position: relative
+    overflow: hidden
   &-step
     padding: 45px
     counter-increment: quiz
-    display: none
-    flex-wrap: wrap
-    min-height: 300px
+    @include flexbox
+    opacity: 0
+    pointer-events: none
+    transition: .3s
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    transform: translateX(-100%)
+    &.no-checked
+      .quiz-step__next
+        opacity: 0.5
+        cursor: not-allowed
     &.active
-      display: flex
+      opacity: 1
+      pointer-events: auto
+      transform: translateX(0%)
+      & + .quiz-step
+        transform: translateX(100%)
     &__content
       width: calc(100% - 200px)
       @include flexbox
@@ -30,7 +48,6 @@
       font-size: 32px
       font-weight: 400
     &__next
-      margin-left: 10px
       font-size: 18px
       line-height: 14px
       padding: 12px 14px
@@ -38,6 +55,7 @@
       border-radius: 99px
       cursor: pointer
       margin-top: auto
+      transition: .25s
     &__prev
       font-size: 18px
       line-height: 14px
@@ -46,6 +64,7 @@
       cursor: pointer
       margin-top: auto
       opacity: 0.4
+      margin-right: 10px
     &__variables
       margin-top: auto
       padding-bottom: 10px
