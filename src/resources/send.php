@@ -30,13 +30,16 @@
     curl_setopt($curl, CURLOPT_URL, "https://api.telegram.org/bot" . TOKEN . "/sendMessage");
     curl_setopt($curl, CURLOPT_POST, true);
     curl_setopt($curl, CURLOPT_POSTFIELDS, $params);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     $result = curl_exec($curl);
     curl_close($curl);
 
-    if (isset($_FILES["file"])) {
+    if (isset($_FILES["file"]) && $_FILES["file"]["error"] == 0) {
       $file_path = $_FILES["file"]["tmp_name"];
+      $file_type = $_FILES["file"]["type"];
+      $file_name = $_FILES["file"]["name"];
 
-      $document = new CURLFile($file_path, $_FILES["file"]["type"], $_FILES["file"]["name"]);
+      $document = new CURLFile($file_path, $file_type, $file_name);
       $data = array(
         "chat_id" => CHATID,
         "document" => $document
@@ -49,13 +52,16 @@
       curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot" . TOKEN . "/sendDocument");
       curl_setopt($ch, CURLOPT_POST, true);
       curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       $result = curl_exec($ch);
       curl_close($ch);
     }
 
-    exit("<meta http-equiv='refresh' content='0; url= /'>");
+    header("Location: thanks.html");
+    exit;
 
   }
 
-  exit("<meta http-equiv='refresh' content='0; url= /'>");
+  header("Location: thanks.html");
+  exit;
 ?>
