@@ -1,7 +1,7 @@
 <?php
 
-  const CHATID = "-1002109712749";
-  const TOKEN = "6363427698:AAGNRWVHmmKENJRegdVXN3NjsJvk1AXHlTs";
+  const CHATID = "#";
+  const TOKEN = "#";
 
   $success = false;
   if (!empty($_POST["t"])) { $success = true; }
